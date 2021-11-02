@@ -1,0 +1,54 @@
+<configuration debug="false" scan="false">
+    
+    <!-- log human-readable strings to STDOUT-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level [%thread] - [%logger] [%mdc] - %msg%n</pattern>
+        </encoder>
+    </appender>
+	
+	<appender name="LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- <file>${catalina.home}/logs/notes.log</file>  -->
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	      	<!-- daily rollover -->
+	      	<fileNamePattern>${catalina.home}/logs/notes.%d{yyyy-MM-dd}.log</fileNamePattern>
+	      	<!-- keep 30 days' worth of history capped at 3GB total size -->
+	      	<maxHistory>30</maxHistory>
+	      	<totalSizeCap>3GB</totalSizeCap>	
+	    </rollingPolicy>
+
+        <encoder>
+            <pattern>
+                %date %level [%thread] [%logger] [%file:%line] %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_ROOT_LEVEL:-INFO}">
+        <appender-ref ref="${APPENDER:-STDOUT}"/>
+    </root>
+
+    <logger name="com.autobusi.notes" level="${LOG_APP_LEVEL:-TRACE}">
+        <appender-ref ref="LOGFILE"/>
+        <!-- the root's appender is inherited so log is printed to console too -->
+    </logger>
+
+    <!-- suppress warning while stopping Tomcat (https://github.com/spring-projects/spring-boot/issues/4659) -->
+    <logger name="org.apache.commons.dbcp2.BasicDataSource" level="${LOG_CF_LEVEL:-INFO}"/>
+	
+	<!-- log level for spring framework -->
+    <logger name="org.springframework" level="${LOG_CF_LEVEL:-INFO}"/>
+	<logger name="org.springframework.orm.jpa.JpaTransactionManager" level="${LOG_CF_LEVEL:-INFO}"/>
+    
+	<!-- LEVEL CAN NOT BE DEBUG,otherwise tomcat can't be started -->
+	<logger name="org.apache" level="INFO"></logger>
+	
+	<!-- do not log messages with TECHNICAL marker -->
+	<!-- 
+	<turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+		<Name>TESTFILTER</Name>
+		<Marker>TECHNICAL</Marker>
+		<OnMatch>DENY</OnMatch>
+	</turboFilter>
+	-->
+</configuration>

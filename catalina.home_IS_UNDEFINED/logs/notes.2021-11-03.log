@@ -1,0 +1,6 @@
+2021-11-03 09:40:00,005 INFO [main] [com.autobusi.notes.ReadingNotesApplicationTests] [StartupInfoLogger.java:55] Starting ReadingNotesApplicationTests using Java 1.8.0_291 on W-PF21A4QQ with PID 30260 (started by I042102 in C:\Users\I042102\git\notes)
+2021-11-03 09:40:00,006 DEBUG [main] [com.autobusi.notes.ReadingNotesApplicationTests] [StartupInfoLogger.java:56] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-03 09:40:00,009 INFO [main] [com.autobusi.notes.ReadingNotesApplicationTests] [SpringApplication.java:659] No active profile set, falling back to default profiles: default
+2021-11-03 10:06:57,801 INFO [main] [com.autobusi.notes.ReadingNotesApplicationTests] [StartupInfoLogger.java:55] Starting ReadingNotesApplicationTests using Java 1.8.0_291 on W-PF21A4QQ with PID 25072 (started by I042102 in C:\Users\I042102\git\notes)
+2021-11-03 10:06:57,801 DEBUG [main] [com.autobusi.notes.ReadingNotesApplicationTests] [StartupInfoLogger.java:56] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-03 10:06:57,806 INFO [main] [com.autobusi.notes.ReadingNotesApplicationTests] [SpringApplication.java:659] No active profile set, falling back to default profiles: default

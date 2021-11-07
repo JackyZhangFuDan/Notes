@@ -1,3 +1,0 @@
-2021-11-03 17:44:27,199 INFO [main] [com.autobusi.notes.ReadingNotesApplicationTests] [StartupInfoLogger.java:55] Starting ReadingNotesApplicationTests using Java 1.8.0_211 on Jackys-MacBook-Pro.local with PID 59146 (started by jackyzhang in /Users/jackyzhang/git/Notes)
-2021-11-03 17:44:27,234 DEBUG [main] [com.autobusi.notes.ReadingNotesApplicationTests] [StartupInfoLogger.java:56] Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-11-03 17:44:27,237 INFO [main] [com.autobusi.notes.ReadingNotesApplicationTests] [SpringApplication.java:659] No active profile set, falling back to default profiles: default
